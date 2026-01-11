@@ -1,2 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
 
-as
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,k;
+	    cin>>n>>k;
+	    string str;
+	    cin>>str;
+	    
+	    vector<int> alpha(26,0);
+	    
+	    for(char ch:str){
+	        alpha[ch-'a']++;    
+	    }
+	    int oddcnt=0;
+	    for(int i:alpha){
+	        if(i%2!=0) oddcnt++;
+	    }
+	    if(oddcnt-1>k){
+	        cout<<"No"<<endl;
+	    }else{
+	        cout<<"Yes"<<endl;
+	    }
+	}
+    return 0;
+}
